@@ -13,7 +13,7 @@ A tap room web app that allows users and employees to keep track of items at the
 - in terminal, navigate to root directory with 'cd tap-room-project' 
 - enter command 'npm install' to install packages
 - enter command 'webpack-dev-server' to launch server
-- open //local.8080/# in desired browser or click on link provided by terminal
+- go to http://localhost:8080 in desired browser or click on link provided by terminal
 
 ## SPECS
 
@@ -31,8 +31,6 @@ A tap room web app that allows users and employees to keep track of items at the
 | employee can add # of kegs sold | "Sold Keg" | _increases amount of this keg that was sold_ |
 | when employee sells keg, it decreases the amount of available pints | "Sold Keg" | _decreases the amount of available pints_ |
 | employee can see when there are less then 10 pints of a given keg left | "9 pints left" | _reflects amount of pints left_ |
-
-
 
 ## TECHNOLOGIES
 
