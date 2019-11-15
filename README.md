@@ -10,15 +10,30 @@ A tap room web app that allows users and employees to keep track of items at the
 
 ## SPECS
 
-As a patron, I want to see a list/menu of all available kegs. For each keg, I need to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
-As an employee, I want to fill out a form when I tap a new keg to add it to the list. (Don't worry about authenticating employee user accounts yet.)
-As an employee, I want the option to edit a keg's properties after entering them just in case I make a mistake.
-As a patron and/or employee, I want to see how many pints are left in a keg. (Hint: A full keg has roughly 124 pints).
-As an employee, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1.
-As an employee, I want to be able to see kegs with less than 10 pints left so I can be ready to change them.
+
+
+
+
+
 As a patron, I want to have kegs prices to be color-coded for easy readability. Perhaps based on their price (greater or less than $5 per pint, perhaps) or the particular style of beer or kombucha.
 As a patron, I want to use the alcohol content property to display stronger beers differently than weaker beers.
 Requirements
+
+| Behavior | Input | Output |
+|-|-|-|
+| PATRON BEHAVIORS|
+| user can see menu of kegs | "kegs" | _list of available kegs_ |
+| user can see the name, brand, price and alcohol content of each keg | "Stonks" | "Stonks, Stonking Kegs, 13$, 69%" |
+|-|-|-|
+| EMPLOYEE BEHAVIORS |
+|-|-|-|
+| employee can add new kegs | "Add Keg" | _fill out form for new keg with new fields_ |
+| employee can edit a kegs properties | "edit this keg" | _fill out form for existing keg to overwrite fields_ |
+| employee can add # of kegs sold | "Sold Keg" | _increases amount of this keg that was sold_ |
+| when employee sells keg, it decreases the amount of available pints | "Sold Keg" | _decreases the amount of available pints_ |
+| employee can see when there are less then 10 pints of a given keg left | "9 pints left" | _reflects amount of pints left_ |
+
+
 
 ## TECHNOLOGIES
 
