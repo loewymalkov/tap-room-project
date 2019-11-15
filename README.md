@@ -1,10 +1,10 @@
 # The Tap Room
 
-A tap room app to keep track of the kegs. 
+A tap room app to keep track of the kegs
 
 ## USE
 
-A tap room web app that allows users and employees to keep track of items at the tap room. 
+A tap room web app that allows users and employees to keep track of items at the tap room. Patrons can browse available kegs, employees can keep track of sold and remaining pints and add new keg types. 
 
 ## SET-UP
 
