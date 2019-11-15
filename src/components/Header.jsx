@@ -8,7 +8,7 @@ const headerStyles = {
 function Header() {
   return (
     <div style={headerStyles} >
-      <h1>the bestest header of all the headers</h1>
+      <h1>This header is straight fire</h1>
       <Link to="/about">About Us</Link> | <Link to="/keglist">List of Kegs</Link>
     </div>
   );
