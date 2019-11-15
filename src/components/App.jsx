@@ -7,11 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App(){
-  var bodybackground = {
-    backgroundColor: 'grey'
-  };
   return (
-    <div style={bodybackground}>
+    <div>
       <Header/>
       <Switch>
         <Route exact path='/keglist' component={KegList} />
