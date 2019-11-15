@@ -8,8 +8,42 @@ const headerStyles = {
 function Header() {
   return (
     <div style={headerStyles} >
-      <h1>This header is straight fire</h1>
-      <Link to="/about">About Us</Link> | <Link to="/keglist">List of Kegs</Link>
+       <style jsx>{`
+
+        ul {
+          list-style-type: none;
+          margin: 10;
+          padding: 20;
+          overflow: hidden;
+        }
+
+        li {
+          float: left;
+          border-right: 1px solid #bbb;
+        }
+
+        .left {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        li a:hover {
+          background-color: #6495ED;
+        }
+
+
+      `}</style>
+      <ul>
+        <li><a><Link to="/about">About Us</Link></a></li>
+        <li><a><Link to="/keglist">List of Kegs</Link></a></li>
+        <li><a><Link to="/newkeg">Add a new Keg</Link></a></li>
+      </ul> 
     </div>
   );
 }
