@@ -32,6 +32,10 @@ A tap room web app that allows users and employees to keep track of items at the
 | when employee sells keg, it decreases the amount of available pints | "Sold Keg" | _decreases the amount of available pints_ |
 | employee can see when there are less then 10 pints of a given keg left | "9 pints left" | _reflects amount of pints left_ |
 
+## ROUTES DIAGRAM
+
+https://drive.google.com/file/d/1e58jvxZfmG0Ccixb9n2qXEvYO41myuR0/view?usp=sharing
+
 ## TECHNOLOGIES
 
 React, jsx, JavaScript, VS Code, draw.io;
