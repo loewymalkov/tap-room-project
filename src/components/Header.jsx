@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const headerStyles = {
-  backgroundColor: 'grey'
+  backgroundColor: '#85C1E9'
 };
 
 function Header() {
@@ -34,7 +34,7 @@ function Header() {
         }
 
         li a:hover {
-          background-color: #6495ED;
+          background-color: #A3E4D7;
         }
 
 

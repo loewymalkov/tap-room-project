@@ -1,9 +1,14 @@
 import React from 'react';
 
+const formStyles = {
+  padding: 50,
+  margin: 20
+};
+
 function NewKegForm(){
   return (
     <div>
-      <form>
+      <form style={formStyles}>
         <input
           type='text'
           id='name'
@@ -16,7 +21,8 @@ function NewKegForm(){
           type='text'
           id='price'
           placeholder='Price'/>
-        <textarea
+        <input
+          type='text'
           id='alcoholContent'
           placeholder='Alcohol Content'/>
         <button type='submit'>Submit Keg Info</button>

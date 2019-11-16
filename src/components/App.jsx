@@ -6,10 +6,15 @@ import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const globalStyles = {
+  backgroundColor: '#EAF2F8',
+  fontFamily: 'Red Hat Text'
+};
+
 
 function App(){
   return (
-    <div>
+    <div style={globalStyles}>
       <Header/>
       <Switch>
         <Route exact path='/keglist' component={KegList} />
