@@ -9,16 +9,22 @@ const kegListStyles = {
 };
 
 function KegList(props) {
+
+  props.kegList.sort((a, b) => b.quantity - a.quantity);
+
   return (
     <div>
       <hr/>
       <h1 style={kegListStyles} >Available Kegs</h1>
-      {props.kegList.map((keg) =>
+      {props.kegList.map((keg, index) =>
         <Keg name={keg.name}
           brand={keg.brand}
           price={keg.price}
           alcoholContent={keg.alcoholContent}
           quantity={keg.quantity}
+          addQuantity={props.addQuantity}
+          reduceQuantity={props.reduceQuantity}
+          index={index}
           key={keg.id}/>
       )}
     </div>
@@ -26,7 +32,10 @@ function KegList(props) {
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
+  addQuantity: PropTypes.func,
+  reduceQuantity: PropTypes.func,
+  index: PropTypes.number
 };
 
 export default KegList;

@@ -18,20 +18,26 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.css']
+    extensions: ['.js', '.jsx']
   },
-
   devtool: '#source-map',
 
-  devServer: {
-    hot: true,
-    contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
-  },
+    devServer: {
+      hot: true,
+      contentBase: resolve(__dirname, 'build'),
+      publicPath: '/'
+    },
 
   module: {
-    rules: [
-      {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        },
+          {
         test: /\.jsx?$/,
         enforce: "pre",
         loader: "eslint-loader",
@@ -42,15 +48,21 @@ module.exports = {
           }
         },
         {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
-        },
+            test: /\.(png|gif|jp(e*)g|svg)$/,
+            use: {
+              loader: 'url-loader',
+              options: {
+                limit: 8000,
+                name: 'images/[hash]-[name].[ext]'
+              }
+            }
+          },
         {
-        test: /\.jsx?$/,
-        loader: "babel-loader",
-        exclude: /node_modules/,
-        options: {
-          presets: [
+          test: /\.jsx?$/,
+          loader: "babel-loader",
+          exclude: /node_modules/,
+          options: {
+            presets: [
             ["es2015", {"modules": false}],
             "react",
           ],
@@ -59,18 +71,17 @@ module.exports = {
             "styled-jsx/babel"
           ]
         }
-      }
-    ]
-  },
-
+        }
+      ],
+    },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({
+     new webpack.HotModuleReplacementPlugin(),
+     new webpack.NamedModulesPlugin(),
+     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
       title: 'The Tap Room',
       filename: resolve(__dirname, "build", "index.html"),
     }),
-  ]
-};
+   ]
+ };

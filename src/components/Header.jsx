@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'materialize-css/dist/css/materialize.min.css';
 
 const headerStyles = {
   backgroundColor: '#566573 '
@@ -45,9 +46,9 @@ function Header() {
       `}</style>
 
       <ul>
-        <li><a><Link style={linkStyles} to="/">About Us</Link></a></li>
-        <li><a><Link style={linkStyles} to="/keglist">List of kegs</Link></a></li>
-        <li><a><Link style={linkStyles} to="/newkeg">Add a new keg</Link></a></li>
+        <li><Link style={linkStyles} to="/">About Us</Link></li>
+        <li><Link style={linkStyles} to="/keglist">List of kegs</Link></li>
+        <li><Link style={linkStyles} to="/newkeg">Add a new keg</Link></li>
       </ul> 
     </div>
   );
