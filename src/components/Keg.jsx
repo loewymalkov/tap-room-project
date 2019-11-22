@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const kegStyles = {
+  marginLeft: 30,
+  marginTop: 4
+};
+
 function Keg(props){
   return (
-    <div>
+    <div style={kegStyles}>
       <h3>{props.brand} - {props.name}</h3>
       <p><em>{props.price} - {props.alcoholContent}</em></p>
       <hr/>

@@ -7,7 +7,7 @@ const aboutUsStyles = {
 const imgStyles = {
   width: 400,
   marginLeft: 300
-}
+};
 
 function AboutUs() {
   return (

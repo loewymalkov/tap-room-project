@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const headerStyles = {
-  backgroundColor: '#85C1E9'
+  backgroundColor: '#566573 '
+};
+
+const linkStyles = {
+  color: '#FFF'
 };
 
 function Header() {
   return (
     <div style={headerStyles} >
-       <style jsx>{`
+      <style jsx>{`
 
         ul {
           list-style-type: none;
@@ -19,7 +23,8 @@ function Header() {
 
         li {
           float: left;
-          border-right: 1px solid #bbb;
+          border-right: 1px solid white;
+          color: white;
         }
 
         .left {
@@ -29,20 +34,20 @@ function Header() {
         li a {
           display: block;
           text-align: center;
-          padding: 14px 16px;
+          padding: 20px 110px;
           text-decoration: none;
         }
 
         li a:hover {
-          background-color: #A3E4D7;
+          background-color: #5499C7;
         }
 
-
       `}</style>
+
       <ul>
-        <li><a><Link to="/about">About Us</Link></a></li>
-        <li><a><Link to="/keglist">List of Kegs</Link></a></li>
-        <li><a><Link to="/newkeg">Add a new Keg</Link></a></li>
+        <li><a><Link style={linkStyles} to="/about">About Us</Link></a></li>
+        <li><a><Link style={linkStyles} to="/keglist">List of kegs</Link></a></li>
+        <li><a><Link style={linkStyles} to="/newkeg">Add a new keg</Link></a></li>
       </ul> 
     </div>
   );

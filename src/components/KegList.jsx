@@ -2,7 +2,9 @@ import React from 'react';
 import Keg from './Keg';
 
 const kegListStyles = {
-  marginTop: 100
+  marginTop: 100,
+  marginLeft: 15,
+  marginBottom: 40
 };
 
 var masterKegList = [
