@@ -7,7 +7,9 @@ const headerStyles = {
 };
 
 const linkStyles = {
-  color: '#FFF'
+  color: '#FFF',
+  marginLeft: 35,
+  marginRight: 35
 };
 
 function Header() {
