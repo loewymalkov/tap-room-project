@@ -17,6 +17,7 @@ function NewKegForm(){
   let _price = null;
   let _alcoholContent = null;
   let _quantity = 0;
+  
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
     props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value, quantiy: _quantity, id: v4()});
