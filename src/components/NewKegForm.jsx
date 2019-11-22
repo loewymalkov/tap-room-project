@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 const formStyles = {
@@ -11,13 +12,13 @@ const inputStyle = {
   marginRight: 5
 };
 
-function NewKegForm(){
+function NewKegForm(props){
   let _name = null;
   let _brand = null;
   let _price = null;
   let _alcoholContent = null;
   let _quantity = 0;
-  
+
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
     props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value, quantiy: _quantity, id: v4()});
@@ -33,22 +34,30 @@ function NewKegForm(){
           style={inputStyle}
           type='text'
           id='name'
-          placeholder='Keg Name'/>
+          placeholder='Keg Name'
+          ref={(input) => {_name = input;}}
+        />
         <input
           style={inputStyle}
           type='text'
           id='brand'
-          placeholder='Brand Name'/>
+          placeholder='Brand Name'
+          ref={(input) => {_brand = input;}}
+        />
         <input
           style={inputStyle}
           type='text'
           id='price'
-          placeholder='Price'/>
+          placeholder='Price'
+          ref={(input) => {_price = input;}}
+        />
         <input
           style={inputStyle}
           type='text'
           id='alcoholContent'
-          placeholder='Alcohol Content'/>
+          placeholder='Alcohol Content'
+          ref={(input) => {_alcoholContent = input;}}
+        />
         <button type='submit'>Submit</button>
       </form>
     </div>

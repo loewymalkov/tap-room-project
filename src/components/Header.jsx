@@ -45,7 +45,7 @@ function Header() {
       `}</style>
 
       <ul>
-        <li><a><Link style={linkStyles} to="/about">About Us</Link></a></li>
+        <li><a><Link style={linkStyles} to="/">About Us</Link></a></li>
         <li><a><Link style={linkStyles} to="/keglist">List of kegs</Link></a></li>
         <li><a><Link style={linkStyles} to="/newkeg">Add a new keg</Link></a></li>
       </ul> 

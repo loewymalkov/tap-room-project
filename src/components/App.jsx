@@ -4,7 +4,7 @@ import KegList from './KegList';
 import NewKegForm from './NewKegForm';
 import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'materialize-css/dist/css/materialize.min.css';
 
 class App extends React.Component {
 
@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       masterKegList: []
-    }
+    };
     this.handleNewKegToList = this.handleNewKegToList.bind(this);
   }
 
@@ -34,8 +34,8 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' component={AboutUs} />
-          <Route exact path='/keglist' component={KegList} />
-          <Route path='/newkeg' component={NewKegForm} />
+          <Route exact path='/keglist' render={() => <KegList kegList={this.state.masterKegList} /> } /> 
+          <Route path='/newkeg' render={() => <NewKegForm onNewKegCreation={this.handleNewKegToList} /> } />
         </Switch>
       </div>
     );

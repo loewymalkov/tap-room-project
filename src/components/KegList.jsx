@@ -8,7 +8,7 @@ const kegListStyles = {
   marginBottom: 40
 };
 
-function KegList() {
+function KegList(props) {
   return (
     <div>
       <hr/>
