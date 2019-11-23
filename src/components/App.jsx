@@ -25,13 +25,13 @@ class App extends React.Component {
   }
 
   handleAddQuantity(index) {
-    var newMasterKegList = this.state.masterKegList.slice();
+    var newMasterKegList = this.state.masterKegList;
     newMasterKegList[index].quantity ++;
     this.setState({ masterKegList: newMasterKegList });
   }
 
   handleReduceQuantity(index) {
-    var newMasterKegList = this.state.masterKegList.slice();
+    var newMasterKegList = this.state.masterKegList;
     newMasterKegList[index].quantity --;
     this.setState({ masterKegList: newMasterKegList });
   }
@@ -48,7 +48,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' component={AboutUs} />
-          <Route exact path='/keglist' render={() => <KegList kegList={this.state.masterKegList} addQuantity={this.state.handleAddQuantity} reduceQuantity={this.state.handleReduceQuantity} /> } /> 
+          <Route exact path='/keglist' render={() => <KegList kegList={this.state.masterKegList} addQuantity={this.handleAddQuantity} reduceQuantity={this.handleReduceQuantity} /> } /> 
           <Route path='/newkeg' render={() => <NewKegForm onNewKegCreation={this.handleNewKegToList} /> } />
         </Switch>
       </div>

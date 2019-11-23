@@ -17,7 +17,7 @@ function NewKegForm(props){
   let _brand = null;
   let _price = null;
   let _alcoholContent = null;
-  let _quantity = null;
+  let _quantity = 0;
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
