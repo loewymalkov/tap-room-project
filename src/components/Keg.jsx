@@ -31,7 +31,7 @@ Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  alcoholContent: PropTypes.string,
+  alcoholContent: PropTypes.string.isRequired,
   quantity: PropTypes.number,
   addQuantity: PropTypes.func,
   reduceQuantity: PropTypes.func,
