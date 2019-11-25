@@ -9,15 +9,9 @@ const kegListStyles = {
 };
 
 const kegHubStyles = {
-  marginTop: 80,
-  marginLeft: 15,
   marginBottom: 20
 };
 
-const kegStyles = {
-  marginLeft: 30,
-  marginTop: 4
-};
 
 function KegList(props) {
 
@@ -26,8 +20,8 @@ function KegList(props) {
   return (
     <div>
       <hr/>
-      <h1 style={kegHubStyles} >KEG HUB</h1>
-      <p style={kegStyles}>View and manage stock of available kegs</p>
+      <h1 style={kegHubStyles} className="center">KEG HUB</h1>
+      <p className="center">View and manage stock of available kegs. Use up and down arrows to add or remove pints.</p>
       <h3 style={kegListStyles} >Available Kegs</h3>
       {props.kegList.map((keg, index) =>
         <Keg name={keg.name}
@@ -40,6 +34,10 @@ function KegList(props) {
           index={index}
           key={keg.id}/>
       )}
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 }

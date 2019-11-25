@@ -5,6 +5,11 @@ import NewKegForm from './NewKegForm';
 import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
 
+const globalStyles = {
+  backgroundColor: '#EAF2F8',
+  background: 'fill',
+  fontFamily: 'Ubuntu'
+};
 
 class App extends React.Component {
 
@@ -38,13 +43,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <style global jsx>{`
-          html {
-            background-color: '#EAF2F8';
-            fontFamily: 'Red Hat Text';
-          }
-        `}</style>
+      <div style={globalStyles} > 
+      <style global jsx>{`
+        .body {
+          backgroundColor: '#EAF2F8'
+        }
+      `}</style>
         <Header/>
         <Switch>
           <Route exact path='/' component={AboutUs} />
