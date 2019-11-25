@@ -4,7 +4,7 @@ import KegList from './KegList';
 import NewKegForm from './NewKegForm';
 import AboutUs from './AboutUs';
 import { Switch, Route } from 'react-router-dom';
-import 'materialize-css/dist/css/materialize.min.css';
+
 
 class App extends React.Component {
 

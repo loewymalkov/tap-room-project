@@ -21,7 +21,7 @@ function Keg(props){
     <div style={kegStyles}>
       <h3>{props.brand} - {props.name}</h3>
       <p><em>{props.price} - {props.alcoholContent}</em></p>
-      <p><button onClick={handleAddQuantity} className='material-icons'>Stock More</button> <button onClick={handleReduceQuantity} className='material-icons'>Sell a Pint</button> | {props.quantity}</p>
+      <p><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | {props.quantity}</p>
       <hr/>
     </div>
   );
