@@ -34,10 +34,6 @@ function KegList(props) {
           index={index}
           key={keg.id}/>
       )}
-      <br/>
-      <br/>
-      <br/>
-      <br/>
     </div>
   );
 }

@@ -60,10 +60,6 @@ function NewKegForm(props){
         />
         <button type='submit'>Submit</button>
       </form>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
     </div>
   );
 }
