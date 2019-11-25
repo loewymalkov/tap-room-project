@@ -7,24 +7,42 @@ const kegStyles = {
   marginTop: 4
 };
 
-function Keg(props){
+class Keg extends React.Component {
 
-  function handleAddQuantity() {
+  constructor (props) {
+    super(props);
+    this.state = {
+      color: ''
+    };
+
+  }
+  handleAddQuantity() {
     props.addQuantity(props.index);
   }
 
-  function handleReduceQuantity() {
+  handleReduceQuantity() {
     props.reduceQuantity(props.index);
   }
 
-  return (
-    <div style={kegStyles}>
-      <h3>{props.brand} - {props.name}</h3>
-      <p style={{fontSize: 17}}><em>Price: {props.price} - Alcohol Content: {props.alcoholContent}</em></p>
-      <p style={{fontSize: 25}} ><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | <span style={{color: this.state.color}}>{props.quantity}</span> Pints</p>
-      <hr/>
-    </div>
-  );
+  onChange() {
+    if (props.quantity <= 10 ) {
+      this.setState({color: 'red'});
+    } else {
+      this.setState({color: ''});
+    }
+  }
+
+  render() {
+    const { color } = this.state;
+    return (
+      <div style={kegStyles}>
+        <h3>{props.brand} - {props.name}</h3>
+        <p style={{fontSize: 17}}><em>Price: {props.price} - Alcohol Content: {props.alcoholContent}</em></p>
+        <p style={{fontSize: 25}} ><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | <span onChange={(props) => this.onChange(props.index)} style={{color: color}}>{props.quantity} </span> Pints</p>
+        <hr/>
+      </div>
+    );
+  }
 }
 
 Keg.propTypes = {
