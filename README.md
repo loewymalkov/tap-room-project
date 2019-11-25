@@ -23,7 +23,7 @@ A tap room web app that allows users and employees to keep track of items at the
 | user can view available pints | "X pints" | _displays current number of available pints_ |
 | user can change number of available pints| "Sell Pint" | _increases amount of pints for this keg_ |
 | when user sells pint it decreases the amount of available pints | "Sold Keg" | _decreases the amount of available pints_ |
-| user can see when there are less then 10 pints of a given keg left | "9 pints left" | _reflects amount of pints left_ |
+| user can see when there are less then 10 pints of a given keg left via colors | "9 pints left" | _reflects amount of pints left with color change_ |
 
 ## ROUTES DIAGRAM
 
