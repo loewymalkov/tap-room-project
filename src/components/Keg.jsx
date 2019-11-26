@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'materialize-css/dist/css/materialize.min.css';
-// import { useState, useEffect } from 'react';
+
 
 const kegStyles = {
   marginLeft: 30,
@@ -14,36 +14,23 @@ var quantityStyle = {
 
 function Keg(props) {
 
-  // const [color, setColor] = useState('');
-  // const changeColor = () => setColor('red');
-  
-
   function handleAddQuantity() {
     props.addQuantity(props.index);
-  }
-
-  function handleReduceQuantity() {
-    props.reduceQuantity(props.index);
-    if (props.quantity <= 10 ) {
-      quantityStyle = {
-        color: 'red'
-      }; 
-    } else {
+    if (props.quantity > 10) {
       quantityStyle = {
         color: ''
       };
     }
   }
 
-  // function useEffect() {
-  //   if (props.quantity <= 10 ) {
-  //     console.log('change to red');
-  //     setColor('red');
-  //   } else {
-  //     console.log('dont change state');
-  //     setColor('');
-  //   }
-  // }
+  function handleReduceQuantity() {
+    props.reduceQuantity(props.index);
+    if (props.quantity < 11) {
+      quantityStyle = {
+        color: 'red'
+      }; 
+    } 
+  }
 
   return (
     <div style={kegStyles}>
