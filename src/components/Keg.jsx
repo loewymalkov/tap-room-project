@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'materialize-css/dist/css/materialize.min.css';
+import { withState } from 'recompose';
 
 const kegStyles = {
   marginLeft: 30,
@@ -21,7 +22,7 @@ function Keg(props){
     <div style={kegStyles}>
       <h3>{props.brand} - {props.name}</h3>
       <p style={{fontSize: 17}}><em>Price: {props.price} - Alcohol Content: {props.alcoholContent}</em></p>
-      <p style={{fontSize: 25}} ><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | <span style={{color: this.state.color}}>{props.quantity}</span> Pints</p>
+      <p style={{fontSize: 25}} ><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | {props.quantity} Pints</p>
       <hr/>
     </div>
   );
