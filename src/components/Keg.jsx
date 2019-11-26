@@ -1,52 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'materialize-css/dist/css/materialize.min.css';
+// import { useState, useEffect } from 'react';
 
 const kegStyles = {
   marginLeft: 30,
   marginTop: 4
 };
 
-class Keg extends React.Component {
+var quantityStyle = {
+  color: ''
+};
 
-  constructor (props) {
-    super(props);
-    this.state = {
-      color: ''
-    };
-    this.changeColor = this.changeColor.bind(this);
-    this.handleAddQuantity = this.handleAddQuantity.bind(this);
-    this.handleReduceQuantity = this.handleReduceQuantity.bind(this);
-  }
-  handleAddQuantity(props) {
+function Keg(props) {
+
+  // const [color, setColor] = useState('');
+  // const changeColor = () => setColor('red');
+  
+
+  function handleAddQuantity() {
     props.addQuantity(props.index);
   }
 
-  handleReduceQuantity(props) {
+  function handleReduceQuantity() {
     props.reduceQuantity(props.index);
-  }
-
-  changeColor(props) {
     if (props.quantity <= 10 ) {
-      console.log('change to red');
-      this.setState({color: 'red'});
+      quantityStyle = {
+        color: 'red'
+      }; 
     } else {
-      console.log('dont change state');
-      this.setState({color: ''});
+      quantityStyle = {
+        color: ''
+      };
     }
   }
 
-  render(props, handleAddQuantity, handleReduceQuantity) {
-    const { color } = this.state;
-    return (
-      <div style={kegStyles}>
-        <h3>{props.brand} - {props.name}</h3>
-        <p style={{fontSize: 17}}><em>Price: {props.price} - Alcohol Content: {props.alcoholContent}</em></p>
-        <p style={{fontSize: 25}} ><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | <span changeColor={this.state.color} style={{color: color}}>{props.quantity} </span> Pints</p>
-        <hr/>
-      </div>
-    );
-  }
+  // function useEffect() {
+  //   if (props.quantity <= 10 ) {
+  //     console.log('change to red');
+  //     setColor('red');
+  //   } else {
+  //     console.log('dont change state');
+  //     setColor('');
+  //   }
+  // }
+
+  return (
+    <div style={kegStyles}>
+      <h3>{props.brand} - {props.name}</h3>
+      <p style={{fontSize: 17}}><em>Price: {props.price} - Alcohol Content: {props.alcoholContent}</em></p>
+      <p style={{fontSize: 25}} ><button onClick={handleAddQuantity} className='material-icons'>arrow_drop_up</button> <button disabled={props.quantity <= 0} onClick={handleReduceQuantity} className='material-icons'>arrow_drop_down</button> | <span style={quantityStyle}> {props.quantity} </span> Pints</p>
+      <hr/>
+    </div>
+  );
 }
 
 Keg.propTypes = {
